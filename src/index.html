@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> _head }}
+  </head>
+  <body>
+    <div class="l-container">
+      {{> _header isTop=true }}
+
+      <main>
+        <p>{{title}}</p>
+        <div class="u-py-10">
+          <div class="u-text-center">
+            <button type="button" class="c-button -secondary">Button</button>
+          </div>
+        </div>
+
+        <div class="articles">
+          {{#each articleData}}
+          <article>
+            <h2>{{title}}</h2>
+            <p>Published on: {{publish}}</p>
+            <p>Author: {{author}}</p>
+            <div>{{content}}</div>
+          </article>
+          {{/each}}
+          <p>
+            <img src="/assets/img/mountain.png" alt="" width="320" height="160" decoding="async" />
+          </p>
+        </div>
+      </main>
+
+      {{> _footer }}
+    </div>
+  </body>
+</html>
