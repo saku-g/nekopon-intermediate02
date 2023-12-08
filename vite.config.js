@@ -4,7 +4,6 @@ import globule from 'globule';
 import handlebars from 'vite-plugin-handlebars';
 import sassGlobImports from 'vite-plugin-sass-glob-import';
 import siteData from './src/data/siteData.json';
-import articleData from './src/data/articleData.json';
 
 /**
  * htmlファイルを配列で取得して、以下の形式でオブジェクトに変換
@@ -56,7 +55,6 @@ export default defineConfig({
       context: (pagePath) => {
         return {
           ...siteData[pagePath],
-          ...articleData,
         };
       },
     }),

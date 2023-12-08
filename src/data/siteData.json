@@ -1,12 +1,7 @@
 {
   "/index.html": {
-    "pageName": "top",
-    "title": "Home",
-    "description": "Home"
-  },
-  "/about.html": {
-    "pageName": "about",
-    "title": "about",
-    "description": "about"
+    "pageName": "Home",
+    "title": "ENGBODY",
+    "description": "ENGBODYは、パーソナルトレーニングと英会話を融合させたパーソナルジムです。すべてのトレーナはネイティブの英会話者で、トレーニング中はすべて英語で行われます。"
   }
 }
