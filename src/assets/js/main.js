@@ -1,5 +1,5 @@
-import { hello } from './sub.js';
+import { mySwiper } from './swiper';
 
-hello();
+mySwiper();
 
 console.log('main.js');
