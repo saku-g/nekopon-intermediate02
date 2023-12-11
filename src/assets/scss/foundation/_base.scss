@@ -8,19 +8,21 @@
   --color-black-rgb: 0 0 0;
   --color-base: var(--color-white);
   --color-main: #eb51c2;
+  --color-main-rgb: 235 81 194;
   --color-accent: #00b21b;
   --color-text: #111;
   --color-link: #349bf4;
   --content-width: 1110;
+  --height-header: 60px;
+
+  @include mq(lg) {
+    --height-header: 80px;
+  }
 
   // Design Comp Width
   // -------------------------
   // デザインカンプ幅。ブレイクポイントごとに上書き
   --comp-width: 375;
-
-  @include mq(md) {
-    --comp-width: 768;
-  }
 
   @include mq(lg) {
     --comp-width: 1440;
