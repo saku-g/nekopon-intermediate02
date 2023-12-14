@@ -37,14 +37,21 @@
     }
 
     svg {
+      width: 10px;
+      height: 6px;
       fill: var(--color-main);
+
+      @include mq(lg) {
+        width: 16px;
+        height: 12px;
+      }
     }
 
     &.-prev {
       translate: -50% 0;
 
       svg {
-        rotate: -90deg;
+        rotate: 90deg;
       }
     }
 
@@ -52,7 +59,7 @@
       translate: 50% 0;
 
       svg {
-        rotate: 90deg;
+        rotate: -90deg;
       }
     }
   }

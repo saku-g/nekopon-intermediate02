@@ -1,9 +1,75 @@
 @use "../../global/" as *;
 
 .p-footer {
-  padding-block: rem(60) rem(20);
+  margin-top: rem(50);
 }
 
-.p-footer__copyright {
-  font-size: rem(12);
+.p-footer__toTop {
+  --right: calc((100% - (335 / 375 * 100%)) / 2);
+
+  position: fixed;
+  right: var(--right);
+  bottom: 20px;
+}
+
+.p-footer__toTopButton {
+  --size: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgb(var(--color-black-rgb) / 20%);
+
+  @include mq(lg) {
+    --size: 80px;
+  }
+}
+
+.p-footer__toTopIcon {
+  width: 12px;
+  height: 8px;
+  rotate: 180deg;
+  fill: var(--color-main);
+
+  @include mq(lg) {
+    width: 22px;
+    height: 14px;
+  }
+}
+
+.p-footer__image {
+  img {
+    width: 100%;
+  }
+}
+
+.p-footer__cta {
+  padding-block: rem(30) rem(20);
+  background-color: var(--color-main);
+  text-align: center;
+
+  @include mq(lg) {
+    padding-block: rem(50);
+  }
+}
+
+.p-footer__message {
+  color: var(--color-white);
+  font-size: my-clamp(26, 64, 375, 1440);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.p-footer__bottom {
+  padding-block: rem(50);
+  background-color: var(--color-text);
+  text-align: center;
+}
+
+.p-footer__logo {
+  line-height: 1;
 }

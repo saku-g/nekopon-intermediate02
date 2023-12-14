@@ -11,6 +11,7 @@
 .p-trainerTab__button {
   width: 100%;
   padding: rem(4);
+  transition: background-color 0.3s ease-in-out;
   color: var(--color-white);
   text-align: center;
 
@@ -25,8 +26,11 @@
     font-weight: 700;
   }
 
-  @include hover {
-    background-color: rgb(0 0 0 / 8%);
+  // 選択中のタブ
+  &:not([aria-selected="true"]) {
+    @include hover {
+      background-color: rgb(0 0 0 / 8%);
+    }
   }
 }
 

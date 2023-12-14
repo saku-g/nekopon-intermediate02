@@ -26,9 +26,19 @@
 
   @include mq(lg) {
     max-width: 360px;
+    font-size: rem(20);
   }
 
   @include hover {
-    background-color: rgb(var(--color-main-rgb) / 90%);
+    background-color: rgb(var(--color-main-rgb) / 85%);
+  }
+}
+
+.c-button:where(.-primary.-white) {
+  background-color: var(--color-white);
+  color: var(--color-main);
+
+  @include hover {
+    background-color: rgb(var(--color-white-rgb) / 80%);
   }
 }
