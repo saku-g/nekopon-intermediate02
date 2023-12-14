@@ -1,0 +1,96 @@
+@use "../../global/" as *;
+
+.p-courses {
+  --px: calc((100% - (335 / 375 * 100%)) / 2);
+
+  display: flex;
+  margin-top: rem(-22);
+  padding-top: rem(22);
+  padding-inline: var(--px);
+  overflow-x: auto;
+  gap: 20px;
+
+  @include mq(lg) {
+    --px: 0;
+
+    gap: 30px;
+    width: min(335 / 375 * 100%, (var(--content-width) * 1px));
+    margin-inline: auto;
+  }
+}
+
+.p-course {
+  position: relative;
+  flex: 1 0 min(calc(290 / 335 * 100%), 320px);
+  padding: rem(40) 20px 0;
+  border-radius: 10px;
+  background-color: var(--color-white);
+  line-height: 1.25;
+
+  @include mq(lg) {
+    flex: 0 1 calc(100% / 3);
+  }
+}
+
+.p-course__header {
+  text-align: center;
+}
+
+.p-course__title {
+  color: var(--color-main);
+  font-size: rem(26);
+  font-weight: 700;
+}
+
+.p-course__price {
+  font-size: rem(48);
+
+  span {
+    display: block;
+    font-size: rem(16);
+
+    @include mq(lg) {
+      font-size: rem(18);
+    }
+  }
+}
+
+.p-course__label {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  width: calc(256 / 350 * 100%);
+  padding: rem(10);
+  transform: translateX(-50%);
+  border: 2px solid var(--color-main);
+  border-radius: 50px;
+  background: var(--color-white);
+  color: var(--color-main);
+  font-size: rem(20);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.p-course__list {
+  margin-top: rem(30);
+}
+
+.p-course__item {
+  padding-block: rem(30);
+  border-top: 1px solid var(--color-gray);
+  text-align: center;
+
+  @include mq(lg) {
+    padding-block: rem(20);
+  }
+
+  dt {
+    font-size: rem(18);
+    font-weight: 400;
+  }
+
+  dd {
+    margin-top: rem(4);
+    font-weight: 700;
+  }
+}

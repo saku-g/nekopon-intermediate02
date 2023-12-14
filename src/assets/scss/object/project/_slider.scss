@@ -1,0 +1,59 @@
+@use "../../global/" as *;
+
+.p-slider {
+  position: relative;
+
+  .p-slider__pagination {
+    --swiper-pagination-bottom: -15px;
+    --swiper-pagination-color: var(--color-main);
+
+    line-height: 1;
+    translate: 0 calc(100%);
+
+    @include mq(lg) {
+      --swiper-pagination-bottom: -25px;
+      --swiper-pagination-bullet-size: 12px;
+      --swiper-pagination-bullet-horizontal-gap: 5px;
+    }
+  }
+
+  .p-slider__button {
+    --swiper-navigation-sides-offset: 0;
+    --swiper-navigation-size: 40px;
+
+    width: var(--swiper-navigation-size);
+    height: var(--swiper-navigation-size);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    box-shadow: 0 0 4px rgb(0 0 0 / 16%);
+
+    @include mq(lg) {
+      --swiper-navigation-size: 64px;
+    }
+
+    // デフォルトの矢印を非表示
+    &::after {
+      content: "";
+    }
+
+    svg {
+      fill: var(--color-main);
+    }
+
+    &.-prev {
+      translate: -50% 0;
+
+      svg {
+        rotate: -90deg;
+      }
+    }
+
+    &.-next {
+      translate: 50% 0;
+
+      svg {
+        rotate: 90deg;
+      }
+    }
+  }
+}

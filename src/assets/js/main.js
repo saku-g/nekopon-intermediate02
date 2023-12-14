@@ -1,5 +1,7 @@
+import { tab } from './tab';
 import { mySwiper } from './swiper';
+import { accordion } from './accordion';
 
+tab();
 mySwiper();
-
-console.log('main.js');
+accordion();

@@ -2,6 +2,7 @@
 
 .c-card {
   display: flex;
+  flex: 1;
   flex-direction: column;
 
   @include hover {
@@ -12,33 +13,25 @@
 }
 
 .c-card__body {
-  padding-top: 1.25rem;
+  flex: 1;
+  padding: rem(20);
+  border-radius: 0 0 10px 10px;
+  background-color: var(--color-white);
 }
 
-.c-card__title {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.6;
+.c-card__text {
+  font-size: rem(14);
+  line-height: 1.5;
 }
 
-.c-card__date {
-  margin-top: 0.3125rem;
-  font-size: 0.75rem;
-
-  @include mq(md) {
-    margin-top: 0.625rem;
-  }
-}
-
-.c-card__thumbnail {
+.c-card__image {
   order: -1;
-  aspect-ratio: 350/180;
   overflow: hidden;
-}
+  border-radius: 10px 10px 0 0;
 
-.c-card__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: scale 0.25s ease;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

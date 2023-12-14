@@ -1,0 +1,40 @@
+@use "../../global/" as *;
+
+.p-intro {
+  margin-top: rem(-20);
+}
+
+.p-intro__title {
+  color: var(--color-main);
+  font-size: my-clamp(56, 108, 375, 1440);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-align: center;
+}
+
+.p-intro__subTitle {
+  font-size: my-clamp(16, 32, 375, 1440);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+
+  span {
+    color: var(--color-main);
+  }
+}
+
+.p-intro__text {
+  max-width: 705px;
+  margin-top: rem(15);
+  margin-inline: auto;
+  font-size: rem(15);
+  letter-spacing: 0;
+  line-height: 1.8;
+
+  @include mq(md) {
+    font-size: rem(16);
+    text-align: center;
+  }
+}
