@@ -2,6 +2,7 @@
 
 .p-features {
   padding-block: rem(20) rem(40);
+  overflow-x: hidden;
 
   @include mq(lg) {
     padding-block: rem(30) rem(80);
@@ -35,17 +36,16 @@
   width: min((335 / 375 * 100%), var(--content-width) * 1px);
   margin-top: rem(-10);
   margin-inline: auto;
-  padding: my-clamp(30, 60, 375, 1440);
+  padding: clamp(30px, 2.9vw, 60px);
   border-radius: 8px;
   background-color: var(--color-white);
   box-shadow: 0 0 20px rgb(0 0 0 / 10%);
 
   @include mq(lg) {
-    position: absolute;
-    right: 20px;
+    position: relative;
+    right: calc(85 / var(--comp-width) * 100%);
     bottom: -20px;
-    width: 555px;
-    margin-top: 0;
+    flex: 0 0 calc(555 / var(--comp-width) * 100%);
   }
 }
 
@@ -81,7 +81,7 @@
   order: -1;
 
   @include mq(lg) {
-    width: calc(950 / var(--comp-width) * 100%);
+    flex: 0 0 calc(950 / var(--comp-width) * 100%);
   }
 
   img {
@@ -90,16 +90,18 @@
 }
 
 .p-feature.-reverse {
-  @include mq(lg) {
-    justify-content: flex-end;
-  }
-
   .p-feature__subTitle {
     color: var(--color-accent);
   }
 
+  .p-feature__image {
+    @include mq(lg) {
+      order: initial;
+    }
+  }
+
   .p-feature__body {
     right: initial;
-    left: 20px;
+    left: calc(85 / var(--comp-width) * 100%);
   }
 }

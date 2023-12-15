@@ -74,6 +74,10 @@ button {
   cursor: pointer;
 }
 
+:focus-visible {
+  outline: 3px dashed var(--color-black);
+}
+
 img {
   max-width: 100%;
   height: auto;

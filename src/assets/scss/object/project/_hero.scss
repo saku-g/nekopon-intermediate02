@@ -124,11 +124,13 @@
 }
 
 .p-hero__button {
-  max-width: 220px;
-  padding: rem(13) 25px;
+  display: inline-block;
+  width: auto;
+  min-width: 220px;
+  padding: rem(13) rem(25);
 
   @include mq(lg) {
-    max-width: 370px;
+    min-width: 370px;
     padding-block: rem(30);
   }
 }

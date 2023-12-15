@@ -7,11 +7,11 @@
 // -------------------------
 $breakpoints: (
   xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+  sm: calc(576 / 16 * 1rem),
+  md: calc(768 / 16 * 1rem),
+  lg: calc(992 / 16 * 1rem),
+  xl: calc(1200 / 16 * 1rem),
+  xxl: calc(1400 / 16 * 1rem),
 ) !default;
 
 @mixin mq($name, $not: false) {
@@ -54,7 +54,8 @@ $breakpoints: (
 
   // デスクトップ
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
+    &:hover,
+    &:focus {
       @content;
     }
   }

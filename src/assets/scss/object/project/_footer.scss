@@ -68,8 +68,20 @@
   padding-block: rem(50);
   background-color: var(--color-text);
   text-align: center;
+
+  @include mq(lg) {
+    padding-block: rem(100);
+  }
 }
 
 .p-footer__logo {
   line-height: 1;
+
+  img {
+    width: 87px;
+
+    @include mq(lg) {
+      width: 180px;
+    }
+  }
 }

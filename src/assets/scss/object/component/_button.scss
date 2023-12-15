@@ -11,9 +11,8 @@
 }
 
 .c-button:where(.-primary) {
-  width: 100%;
-  max-width: 300px;
-  padding: rem(17) 20px;
+  width: min(100%, 300px);
+  padding: rem(20);
   transition-property: scale, background-color;
   transition-duration: 0.1s, 0.3s;
   transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
@@ -25,7 +24,8 @@
   letter-spacing: 0.05em;
 
   @include mq(lg) {
-    max-width: 360px;
+    min-width: 360px;
+    padding: rem(25);
     font-size: rem(20);
   }
 
