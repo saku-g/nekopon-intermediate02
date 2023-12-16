@@ -5,7 +5,15 @@
   z-index: 1;
   top: 0;
   height: var(--height-header);
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.15s, 0.3s;
+  transition-timing-function: ease;
   background-color: transparent;
+
+  &.is-active {
+    background-color: var(--color-white);
+    box-shadow: 0 3px 6px rgb(var(--color-black-rgb) / 5%);
+  }
 }
 
 .p-header__inner {
@@ -44,6 +52,14 @@
 .p-header__cta {
   display: none;
   margin-left: 8px;
+  transition-property: visibility, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-color: transparent;
+
+  .p-header.is-active & {
+    display: block;
+  }
 }
 
 .p-header__ctaButton {
@@ -51,19 +67,9 @@
   font-size: rem(12);
   letter-spacing: 0;
 
-  @include mq(md) {
-    padding-block: 1em;
+  @include mq(lg) {
+    min-width: auto;
+    padding: rem(13);
     font-size: rem(14);
-  }
-}
-
-.is-scroll {
-  .p-header {
-    background-color: var(--color-white);
-    box-shadow: 0 3px 6px rgb(var(--color-black-rgb) / 5%);
-  }
-
-  .p-header__action {
-    display: block;
   }
 }

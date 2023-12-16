@@ -1,0 +1,59 @@
+@use "../../global/" as *;
+
+.c-anime {
+  --duration: 0.4s;
+  --delay: 0s;
+  --translation: 40px;
+
+  transition:
+    transform var(--duration) ease-in-out var(--delay),
+    opacity var(--duration) ease-in-out var(--delay);
+
+  &.-fadeIn {
+    opacity: 0;
+
+    &.is-animated {
+      opacity: 1;
+    }
+  }
+
+  &.-fadeInTop {
+    transform: translateX(var(--translation));
+    opacity: 0;
+
+    &.is-animated {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &.-fadeInLeft {
+    transform: translateX(calc(var(--translation) * -1));
+    opacity: 0;
+
+    &.is-animated {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &.-fadeInRight {
+    transform: translateX(var(--translation));
+    opacity: 0;
+
+    &.is-animated {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &.-slideInUp {
+    transform: translateY(var(--translation));
+    opacity: 0;
+
+    &.is-animated {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

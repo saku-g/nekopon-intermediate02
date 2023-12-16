@@ -1,39 +1,51 @@
 export function tab() {
   const tabs = document.querySelectorAll('.js-tab');
 
+  /**
+   * パネルを表示する関数
+   * @param {Element} button - クリックされたボタン
+   */
+  const panelActive = (button) => {
+    // 対象のタブパネルIDからタブパネルを表示
+    const targetPanelId = button.getAttribute('aria-controls');
+    console.log(targetPanelId);
+    document.querySelector(`#${targetPanelId}`).classList.add('is-show');
+  };
+
+  /**
+   * すべてのボタンとパネルをリセットする関数
+   * @param {NodeList} buttons - タブボタンのリスト
+   * @param {NodeList} panels - タブパネルのリスト
+   */
+  const resetTab = (buttons, panels) => {
+    buttons.forEach((button) => {
+      button.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach((panel) => {
+      panel.classList.remove('is-show');
+    });
+  };
+
   tabs.forEach((tab) => {
     /**
-     * Init
-     ==================== */
+     * 選択中のタブを表示
+     * -------------------- */
     // 選択中のボタンを取得
     const selectedButton = tab.querySelector('button[aria-selected="true"]');
-
-    // 対象のタブパネルID
-    const targetPanelId = selectedButton.getAttribute('aria-controls');
-
-    // 対象のタブパネルを表示
-    document.querySelector(`#${targetPanelId}`).classList.add('is-show');
+    panelActive(selectedButton);
 
     /**
-     * Event
-     ==================== */
+     * イベント
+     * -------------------- */
     const tabButtons = tab.querySelectorAll('button[role="tab"]');
     const tabPanels = tab.querySelectorAll('[role="tabpanel"]');
 
     tabButtons.forEach((button) => {
       button.addEventListener('click', (e) => {
-        tabButtons.forEach((button) => {
-          button.setAttribute('aria-selected', 'false');
-        });
-        tabPanels.forEach((panel) => {
-          panel.classList.remove('is-show');
-        });
+        resetTab(tabButtons, tabPanels);
 
         e.currentTarget.setAttribute('aria-selected', 'true');
-
-        const targetPanelId = e.currentTarget.getAttribute('aria-controls');
-
-        document.querySelector(`#${targetPanelId}`).classList.add('is-show');
+        panelActive(e.currentTarget);
       });
     });
   });

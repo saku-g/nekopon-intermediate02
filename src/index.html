@@ -7,7 +7,7 @@
     {{> _svg }}
     <div class="l-site">
       <!-- Header -->
-      <header class="l-site__header p-header">
+      <header class="l-site__header p-header js-header">
         <div class="p-header__inner">
           <h1 class="p-header__title">
             <a class="p-header__logo" href="/">
@@ -27,19 +27,17 @@
           <div class="l-container">
             <div class="p-hero__body">
               <div class="p-hero__copy">
-                <p class="p-hero__copyLine"><span class="p-hero__copyText">Body Make</span></p>
-                <p class="p-hero__copyLine">
-                  <span class="p-hero__copyText">
-                    <span style="color: var(--color-main); margin-right: 4px">&amp;</span>English</span
-                  >
-                </p>
+                <p class="p-hero__copyLine">Body Make</p>
+                <p class="p-hero__copyLine"><span>&amp;</span>English</p>
               </div>
-              <p class="p-hero__subCopy">英会話&amp;パーソナルトレーニングジム</p>
+              <p class="p-hero__subCopy">
+                <span class="p-hero__anime">英会話&amp;パーソナルトレーニングジム</span>
+              </p>
               <p class="u-mt-3 lg:u-mt-6">
                 <a class="c-button -primary p-hero__button" href="#">無料カウンセリングを受ける</a>
               </p>
             </div>
-            <figure class="p-hero__image">
+            <figure class="p-hero__image c-anime -fadeIn" style="--delay: 0.15s">
               <picture>
                 <source
                   type="image/webp"
@@ -63,7 +61,7 @@
         <!-- Intro -->
         <section class="p-intro">
           <div class="l-container">
-            <h2 class="p-intro__title">
+            <h2 class="p-intro__title js-introTitle">
               <span class="u-inline-block">YOU CAN</span> <span class="u-inline-block">DO IT!</span>
             </h2>
             <p class="p-intro__subTitle">英語とトレーニングの<span>蜜月関係</span></p>
@@ -79,7 +77,7 @@
         <!-- Feature -->
         <div class="p-features">
           <section class="p-feature">
-            <div class="p-feature__body">
+            <div class="p-feature__body c-anime -slideInUp" style="--delay: 0.3s">
               <h2 class="p-feature__title">
                 <span class="u-inline-blcok">セッションはすべて英語。</span
                 ><span class="u-inline-block">LAさながらの環境</span>
@@ -90,7 +88,7 @@
                 英語に苦手意識がある方は日本人トレーナーも選べますのでご安心してください。
               </p>
             </div>
-            <figure class="p-feature__image">
+            <figure class="p-feature__image c-anime -fadeInLeft">
               <picture>
                 <source
                   type="image/webp"
@@ -110,7 +108,7 @@
             </figure>
           </section>
           <section class="p-feature -reverse">
-            <div class="p-feature__body">
+            <div class="p-feature__body c-anime -slideInUp" style="--delay: 0.3s">
               <h2 class="p-feature__title">
                 <span class="u-inline-blcok">低糖質レストランを完備！</span
                 ><span class="u-inline-block">美味しく食べてダイエット</span>
@@ -121,7 +119,7 @@
                 carb（低糖質）なのにとっても美味しい味に驚くはずです！メニューも豊富で飽きさせません。美味しく食べてしっかり痩せる！しかも英語力もアップ！それがENGBODYなのです。
               </p>
             </div>
-            <figure class="p-feature__image">
+            <figure class="p-feature__image c-anime -fadeInRight">
               <picture>
                 <source
                   type="image/webp"
@@ -184,7 +182,7 @@
                   </li>
                 </ul>
                 <div class="p-trainerTab__body js-tabBody">
-                  <div class="p-trainerTab__panel" id="tab-trainer" role="tabpanel">
+                  <div class="p-trainerTab__panel c-anime -slideInUp" id="tab-trainer" role="tabpanel">
                     <div class="l-grid" data-gap="3">
                       <div class="l-grid__item" data-col="12 sm:6 md:4">
                         <div class="c-card">
@@ -272,7 +270,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="p-trainerTab__panel" id="tab-staff" role="tabpanel">
+                  <div class="p-trainerTab__panel c-anime -slideInUp" id="tab-staff" role="tabpanel">
                     <div class="l-grid" data-gap="3">
                       <div class="l-grid__item" data-col="12 sm:6 md:4">
                         <div class="c-card">
@@ -353,7 +351,7 @@
                 </h2>
               </div>
               <!-- Slider -->
-              <div class="p-slider">
+              <div class="p-slider c-anime -fadeIn">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <figure class="swiper-slide">
@@ -601,7 +599,7 @@
 
       <!-- Footer -->
       <footer class="l-site__footer p-footer">
-        <div class="p-footer__toTop">
+        <div class="p-footer__toTop js-toTop">
           <a class="p-footer__toTopButton" href="#top" aria-label="ページトップに移動する">
             <svg class="p-footer__toTopIcon">
               <use href="#chevron"></use>

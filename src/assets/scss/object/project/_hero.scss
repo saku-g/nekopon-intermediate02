@@ -16,96 +16,77 @@
   align-items: flex-start;
 }
 
-@keyframes bg_slideIn {
-  0% {
-    transform: translateX(-100%) scaleX(0);
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(0) scaleX(1);
-    opacity: 1;
-  }
-}
-
-@keyframes bg_slideOut {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(105%);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
 .p-hero__copyLine {
+  --duration: 0.5s;
+  --easing: cubic-bezier(0.5, 0, 0.75, 0);
+  --delay: 0.5s;
+
   display: inline-block;
   position: relative;
-  z-index: 1;
   overflow: hidden;
+  animation: slideInLeft var(--duration) var(--easing) calc(var(--duration) + var(--delay)) forwards;
+  background-color: rgb(var(--color-white-rgb) / 0%);
+  color: rgb(var(--color-black-rgb) / 0%);
   font-size: my-clamp(42, 90, 375, 1440);
   font-style: italic;
   line-height: 1;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  // 左からテキスト表示
+  @keyframes slideInLeft {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+      background-color: rgb(var(--color-white-rgb) / 100%);
+      color: rgb(var(--color-black-rgb) / 100%);
+      clip-path: inset(0 0 0 0);
+    }
   }
 
-  // メインカラー背景（消える）
-  &::before {
-    transform-origin: left center;
-    animation: bg_slideOut 0.3s ease-in-out forwards;
+  // 背景
+  &::after {
+    --easing: ease-out;
+
+    content: "";
+    position: absolute;
+    animation: slideOutRight var(--duration) var(--easing) var(--delay) forwards;
     background-color: var(--color-main);
+    inset: 0;
+    translate: -105% 0;
+
+    // 背景スライド
+    @keyframes slideOutRight {
+      0% {
+        translate: -80% 0;
+      }
+
+      50% {
+        translate: 0 0;
+      }
+
+      100% {
+        translate: 100% 0;
+      }
+    }
   }
 
-  // 白背景
-  &::after {
-    z-index: -1;
-    animation: bg_slideIn 0.3s ease-in-out 0.15s forwards;
+  // &
+  span:not([class]) {
+    margin-right: 4px;
+    animation: show var(--duration) var(--easing) calc(var(--duration) + var(--delay)) forwards;
     opacity: 0;
-    background-color: var(--color-white);
-  }
-}
+    color: var(--color-main);
 
-.p-hero__copyText {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 0s ease-in-out 0.3s forwards;
-  opacity: 0;
+    @keyframes show {
+      0% {
+        opacity: 0;
+      }
 
-  // 文字を一文字ずつ表示させるエフェクト
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: bg_slideOut 0.3s ease-in-out 0.15s forwards;
-    background-color: var(--color-white);
+      100% {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -113,13 +94,28 @@
   display: inline-block;
   margin-top: rem(10);
   padding: rem(4) 4px rem(3);
+  animation: slideInLeft2 0.3s ease-in-out 1.65s forwards;
+  opacity: 0;
   background-color: var(--color-white);
   font-size: my-clamp(13, 28, 375, 1440);
+  font-style: normal;
   font-weight: 700;
   line-height: 1;
 
   @include mq(md) {
     margin-top: rem(20);
+  }
+
+  @keyframes slideInLeft2 {
+    0% {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
   }
 }
 
